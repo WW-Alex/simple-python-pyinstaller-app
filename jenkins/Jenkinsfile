@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh '/home/hlee/miniconda3/bin/python -m py_compile sources/add2vals.py sources/calc.py' 
+                sh '/home/hlee/miniconda3/bin/python3.12 -m py_compile sources/add2vals.py sources/calc.py' 
                 stash(name: 'compiled-results', includes: 'sources/*.py*') 
             }
         }
